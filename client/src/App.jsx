@@ -1,8 +1,17 @@
 import "./App.css";
+import Navbar from "./componenta/Navbar";
+import DocoPage from "./pages/DocoPage";
+import MoviesPage from "./pages/MoviesPage";
+import SeriesPage from "./pages/SeriesPage";
 
 function App() {
   return (
-    <h1 className="bg-amber-300 p-5 rounded-2xl text-white">Hello World</h1>
+    <div>
+      <Navbar />
+      <DocoPage />
+      <MoviesPage />
+      <SeriesPage />
+    </div>
   );
 }
 
