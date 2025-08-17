@@ -1,8 +1,12 @@
-import "./App.css";
+// src/App.jsx
+import React from 'react';
+import NetflixHomepage from './components/NetflixHomepage';
 
 function App() {
   return (
-    <h1 className="bg-amber-300 p-5 rounded-2xl text-white">Hello World</h1>
+    <div className="App">
+      <NetflixHomepage />
+    </div>
   );
 }
 
