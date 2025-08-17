@@ -1,8 +1,16 @@
 import "./App.css";
+import MovieCard from "./buttons";
 
 function App() {
   return (
-    <h1 className="bg-amber-300 p-5 rounded-2xl text-white">Hello World</h1>
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="bg-black p-4 rounded-lg">
+      <MovieCard
+      title="וידאו לבדיקה"
+        videoSrc="https://www.w3schools.com/html/mov_bbb.mp4"
+      />
+    </div>
+  </div>
   );
 }
 
