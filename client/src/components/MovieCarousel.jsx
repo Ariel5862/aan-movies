@@ -33,7 +33,7 @@ const MovieCarousel = ({ category, onMovieClick }) => {
       <div className="overflow-hidden">
         <div
           ref={rowRef}
-          className="flex gap-2.5" 
+          className="flex gap-2.5"
           style={{ transform: "translateX(0)" }}
         >
           {category.movies.map((movie) => (
