@@ -1,10 +1,10 @@
 import { IoPlayCircleSharp, IoAddCircleOutline } from "react-icons/io5";
 import { BiLike, BiDislike } from "react-icons/bi";
 import { MdVolumeUp, MdVolumeOff } from "react-icons/md";
-import { useState,useRef } from "react";
+import { useState, useRef } from "react";
 import IconButton from "./components/IconButton";
 
-function MovieCard({ title,videoSrc  }) {
+function MovieCard({ title, videoSrc }) {
   const [showLikeOptions, setShowLikeOptions] = useState(false);
   const [muted, setMuted] = useState(true);
   const videoRef = useRef(null);
@@ -26,8 +26,8 @@ function MovieCard({ title,videoSrc  }) {
         muted
         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
       />
- {/* 🔇 כפתור קול בפינה הימנית העליונה */}
- <div className="absolute top-2 right-2 z-20">
+      {/* 🔇 כפתור קול בפינה הימנית העליונה */}
+      <div className="absolute top-2 right-2 z-20">
         <button
           onClick={toggleMute}
           className="bg-black/60 text-white rounded-full p-2 hover:bg-black/80 transition"
@@ -35,7 +35,6 @@ function MovieCard({ title,videoSrc  }) {
           {muted ? <MdVolumeOff size={20} /> : <MdVolumeUp size={20} />}
         </button>
       </div>
-
 
       <div className="absolute inset-0 bg-gradient-to-t from-red/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 text-white">
         <h3 className="text-lg font-semibold mb-2">{title}</h3>
