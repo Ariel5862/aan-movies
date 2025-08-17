@@ -1,8 +1,25 @@
 import "./App.css";
+import { Routes, Route, Navigate } from "react-router-dom";
+import Navbar from "./componenta/Navbar";
+import DocoPage from "./pages/DocoPage";
+import MoviesPage from "./pages/MoviesPage";
+import SeriesPage from "./pages/SeriesPage";
+import MyListPage from "./pages/myListPage";
 
 function App() {
   return (
-    <h1 className="bg-amber-300 p-5 rounded-2xl text-white">Hello World</h1>
+    <div>
+      <Navbar />
+      <main className="max-w-7xl mx-auto p-6">
+        <Routes>
+          <Route path="/" element={<Navigate to="/doco" replace />} />
+          <Route path="/doco" element={<DocoPage />} />
+          <Route path="/movies" element={<MoviesPage />} />
+          <Route path="/series" element={<SeriesPage />} />
+          <Route path="/mylist" element={<MyListPage />} />
+        </Routes>
+      </main>
+    </div>
   );
 }
 
