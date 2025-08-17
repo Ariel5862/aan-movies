@@ -1,7 +1,9 @@
-function DocoPage() {
-    return <div>
-        <h2>DocoPage</h2>
-    </div>
-}
-
-export default DocoPage;
+// client/src/pages/DocoPage.jsx
+export default function DocoPage() {
+    return (
+      <section className="space-y-2">
+        <h2 className="text-xl font-semibold">דוקו</h2>
+        <p className="text-neutral-300">תוכן דוקומנטרי.</p>
+      </section>
+    );
+  }
