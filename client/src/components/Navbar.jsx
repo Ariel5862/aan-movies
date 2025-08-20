@@ -13,8 +13,9 @@ function Navbar() {
           <NavLink className={btn} to="/movies">Movies</NavLink>
           <NavLink className={btn} to="/series">Series</NavLink>
           <NavLink className={btn} to="/mylist">MyList</NavLink>
+          <NavLink className={btn} to="/">home</NavLink>
         </nav>
-      </div>
+      </div> 
     </header>
   );
 }

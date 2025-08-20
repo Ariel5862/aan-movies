@@ -1,6 +1,6 @@
 import "./App.css";
 import { Routes, Route, Navigate } from "react-router-dom";
-import Navbar from "./componenta/Navbar";
+import Navbar from "./components/Navbar";
 import DocoPage from "./pages/DocoPage";
 import MoviesPage from "./pages/MoviesPage";
 import SeriesPage from "./pages/SeriesPage";
