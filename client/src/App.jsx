@@ -9,7 +9,7 @@ import NetflixHomepage from "./components/NetflixHomepage";
 
 function App() {
   return (
-    <div>
+    <div className="min-h-screen bg-gray-900 p-5">
       <Navbar />
       <main className="max-w-7xl mx-auto p-6">
         <Routes>
