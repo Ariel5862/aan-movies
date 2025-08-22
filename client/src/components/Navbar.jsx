@@ -6,12 +6,15 @@ import {
   MdLiveTv,
   MdArticle,
   MdPlaylistAdd,
+  MdMenu,
+  MdClose,
 } from "react-icons/md";
 function Navbar() {
   const btn =
     "px-5 py-2 rounded-full text-sm bg-neutral-800 text-neutral-200 hover:bg-amber-400 hover:text-black transition-colors";
 
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -37,7 +40,17 @@ function Navbar() {
           </div>
 
           {/* תפריט ניווט */}
-          <nav className="flex flex-col items-center gap-4 md:mt-3 md:flex-row md:justify-evenly">
+          {/* Mobile hamburger */}
+          <button
+            className="md:hidden absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-neutral-800 text-neutral-200 hover:bg-amber-400 hover:text-black transition-colors"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            onClick={() => setMenuOpen((v) => !v)}
+          >
+            {menuOpen ? <MdClose size={22} /> : <MdMenu size={22} />}
+          </button>
+
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center gap-4 md:mt-3 md:flex-row md:justify-evenly">
             <NavLink className={btn} to="/">
               <span className="inline-flex items-center gap-2">
                 <MdHome /> <span>Home</span>
@@ -64,6 +77,57 @@ function Navbar() {
               </span>
             </NavLink>
           </nav>
+
+          {/* Mobile dropdown menu */}
+          {menuOpen && (
+            <div className="md:hidden mt-4 grid gap-3">
+              <NavLink
+                className={btn}
+                to="/"
+                onClick={() => setMenuOpen(false)}
+              >
+                <span className="inline-flex items-center gap-2">
+                  <MdHome /> <span>Home</span>
+                </span>
+              </NavLink>
+              <NavLink
+                className={btn}
+                to="/movies"
+                onClick={() => setMenuOpen(false)}
+              >
+                <span className="inline-flex items-center gap-2">
+                  <MdLocalMovies /> <span>Movies</span>
+                </span>
+              </NavLink>
+              <NavLink
+                className={btn}
+                to="/series"
+                onClick={() => setMenuOpen(false)}
+              >
+                <span className="inline-flex items-center gap-2">
+                  <MdLiveTv /> <span>Series</span>
+                </span>
+              </NavLink>
+              <NavLink
+                className={btn}
+                to="/doco"
+                onClick={() => setMenuOpen(false)}
+              >
+                <span className="inline-flex items-center gap-2">
+                  <MdArticle /> <span>Doco</span>
+                </span>
+              </NavLink>
+              <NavLink
+                className={btn}
+                to="/mylist"
+                onClick={() => setMenuOpen(false)}
+              >
+                <span className="inline-flex items-center gap-2">
+                  <MdPlaylistAdd /> <span>MyList</span>
+                </span>
+              </NavLink>
+            </div>
+          )}
         </div>
       </header>
       <main className="pt-20"></main>
