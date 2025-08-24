@@ -22,12 +22,9 @@ export default function Navbar() {
       style={{ WebkitBackdropFilter: scrolled ? "blur(8px)" : undefined }}
     >
       <div className="max-w-7xl mx-auto px-4 py-4 relative">
-        {/* לוגו */}
-        <div className="text-2xl font-bold text-amber-400 mb-4 md:mb-0 md:absolute md:left-4 md:top-1/2 md:-translate-y-1/2">
+        <div className="text-2xl font-bold text-amber-400 mb-4 md:mb-0 md:absolute md:left-1 md:top-1/2 md:-translate-y-1/2">
           AAN Movies
         </div>
-
-        {/* קומפוננטות נפרדות */}
         <DesktopNavbar />
         <MobileNavbar />
       </div>

@@ -10,16 +10,14 @@ export default function MobileNavbar() {
 
   return (
     <div className="md:hidden relative">
-      {/* כפתור המבורגר */}
       <button
-        className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-neutral-800 text-neutral-200 hover:bg-amber-400 hover:text-black transition-colors"
+        className="absolute right-0 top-1/2 -translate-y-15 p-2 rounded-full bg-neutral-800 text-neutral-200 hover:bg-amber-400 hover:text-black transition-colors"
         aria-label={menuOpen ? "Close menu" : "Open menu"}
         onClick={() => setMenuOpen(v => !v)}
       >
         {menuOpen ? <MdClose size={22} /> : <MdMenu size={22} />}
       </button>
 
-      {/* תפריט שנפתח עם אנימציה */}
       <div
         className={`mt-4 grid gap-3 transition-all duration-300 ${
           menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0 overflow-hidden"
