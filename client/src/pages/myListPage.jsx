@@ -1,9 +1,19 @@
 import { useMyList } from "../components/MyListContext";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import MovieModal from "../components/MovieModal";
+
 
 export default function MyListPage() {
   const { myList, removeFromList } = useMyList();
-  const navigate = useNavigate();
+  const [selectedMovie, setSelectedMovie] = useState(null);
+
+  useEffect(() => {
+    function onKeyDown(e) {
+      if (e.key === "Escape") setSelectedMovie(null);
+    }
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
 
   return (
     <section className="space-y-4">
@@ -16,9 +26,7 @@ export default function MyListPage() {
             <div
               key={movie.id}
               className="relative cursor-pointer"
-              onClick={() =>
-                navigate(`/movie/${movie.id}`, { state: { movie } })
-              }
+              onClick={() => setSelectedMovie(movie)}
             >
               <img
                 src={movie.thumbnail}
@@ -43,6 +51,10 @@ export default function MyListPage() {
             </div>
           ))}
         </div>
+      )}
+
+      {selectedMovie && (
+        <MovieModal movie={selectedMovie} onClose={() => setSelectedMovie(null)} />
       )}
     </section>
   );

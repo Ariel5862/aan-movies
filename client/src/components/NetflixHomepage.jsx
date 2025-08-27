@@ -1,23 +1,23 @@
 // src/components/NetflixHomepage.jsx
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import { moviesData } from "../data/moviesData";
 import FeaturedMovie from "./FeaturedMovie";
 import MovieCarousel from "./MovieCarousel";
+import MovieModal from "./MovieModal";
 
 const NetflixHomepage = () => {
+  const [selectedMovie, setSelectedMovie] = useState(null);
+
   const handleMovieClick = (movie) => {
-    console.log("Movie clicked:", movie);
-    // כאן תוכל להוסיף נווט למודל או לעמוד חדש
+    setSelectedMovie(movie);
   };
 
   const handlePlayClick = (movie) => {
-    console.log("Play clicked:", movie);
-    // כאן תוכל להוסיף לוגיקה לניגון הסרט
+    setSelectedMovie(movie);
   };
 
   const handleInfoClick = (movie) => {
-    console.log("Info clicked:", movie);
-    // כאן תוכל להוסיף מודל עם פרטים נוספים
+    setSelectedMovie(movie);
   };
 
   const rotatingFeatured = useMemo(() => {
@@ -52,6 +52,10 @@ const NetflixHomepage = () => {
           onMovieClick={handleMovieClick}
         />
       ))}
+
+      {selectedMovie && (
+        <MovieModal movie={selectedMovie} onClose={() => setSelectedMovie(null)} />
+      )}
     </div>
   );
 };
