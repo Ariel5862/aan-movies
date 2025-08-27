@@ -1,6 +1,6 @@
 // src/components/MovieCarousel.jsx
 import React from "react";
-import { useCarousel } from "../hooks/useCarousel";
+import { useCarousel } from "./hooks/useCarousel";
 import MovieCard from "./MovieCard";
 
 const MovieCarousel = ({ category, onMovieClick }) => {
