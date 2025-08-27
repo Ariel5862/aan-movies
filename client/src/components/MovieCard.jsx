@@ -16,7 +16,11 @@ const MovieCard = ({ movie, onClick }) => {
       />
       <div className="absolute inset-0 flex flex-col justify-end items-center bg-black/30 p-4 gap-2">
         <h3 className="text-white font-semibold text-lg">{movie.title}</h3>
-        <ButtonCard title={movie.title} videoSrc={movie.videoSrc} />
+        <ButtonCard
+          title={movie.title}
+          videoSrc={movie.videoSrc}
+          movie={movie}
+        />
       </div>
     </div>
   );

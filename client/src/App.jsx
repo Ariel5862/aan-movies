@@ -6,14 +6,16 @@ import MoviesPage from "./pages/MoviesPage";
 import SeriesPage from "./pages/SeriesPage";
 import MyListPage from "./pages/myListPage";
 import NetflixHomepage from "./components/NetflixHomepage";
+import MovieDetail from "./pages/MovieDetail";
 
 function App() {
   return (
     <div className="min-h-screen bg-gray-900 p-5">
       <Navbar />
-      <main className="max-w-7xl mx-auto p-6">
+      <main className="max-w-7xl mx-auto p-6 pt-24">
         <Routes>
           <Route path="/" element={<NetflixHomepage />} />
+          <Route path="/movie/:id" element={<MovieDetail />} />
           <Route path="/doco" element={<DocoPage />} />
           <Route path="/movies" element={<MoviesPage />} />
           <Route path="/series" element={<SeriesPage />} />
