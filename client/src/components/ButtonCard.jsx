@@ -34,16 +34,6 @@ function ButtonCard({ title, videoSrc, movie }) {
         muted
         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
       />
-      {/* כפתור קול */}
-      <div className="absolute top-2 right-2 z-20 pointer-events-auto">
-        <button
-          onClick={toggleMute}
-          className="bg-black/60 text-white rounded-full p-2 hover:bg-black/80 transition"
-        >
-          {muted ? <MdVolumeOff size={20} /> : <MdVolumeUp size={20} />}
-        </button>
-      </div>
-
       {/* כפתורים שמופיעים על hover */}
       <div className="absolute inset-0 bg-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 text-white pointer-events-none">
         <h3 className="text-lg font-semibold mb-2 pointer-events-auto">

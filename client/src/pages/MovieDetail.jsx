@@ -19,7 +19,6 @@ export default function MovieDetail() {
       <section className="space-y-4">
         <h2 className="text-xl font-semibold text-white">Movie not found</h2>
         <Link to="/mylist" className="text-amber-400 underline">
-          Back to My List
         </Link>
       </section>
     );
@@ -45,7 +44,6 @@ export default function MovieDetail() {
         <p className="text-neutral-300">Enjoy your movie!</p>
         <div>
           <Link to="/mylist" className="text-amber-400 underline">
-            Back to My List
           </Link>
         </div>
       </div>
